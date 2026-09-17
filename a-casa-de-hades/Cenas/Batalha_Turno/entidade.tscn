@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://d3e7vq176xoip"]
+
+[ext_resource type="Script" uid="uid://cdd6ci5aqc5xi" path="res://Cenas/Batalha_Turno/entidade.gd" id="1_pg7x4"]
+[ext_resource type="Script" uid="uid://cdnsyk3j4i8uc" path="res://Cenas/Batalha_Turno/attack_node.gd" id="2_5g066"]
+[ext_resource type="Script" uid="uid://cox6noaaih5vu" path="res://Cenas/Batalha_Turno/health_node.gd" id="3_63xte"]
+[ext_resource type="Texture2D" uid="uid://dh3d8g6mt3iy4" path="res://sprites/craftpix-net-872297-free-ghost-pixel-art-sprite-sheets/Gotoku/Attack_1.png" id="4_l62d0"]
+[ext_resource type="Texture2D" uid="uid://babn2rj3fg7fr" path="res://sprites/craftpix-net-872297-free-ghost-pixel-art-sprite-sheets/Gotoku/Jump.png" id="5_caxtp"]
+[ext_resource type="Texture2D" uid="uid://cam2w0pjoh36b" path="res://sprites/craftpix-net-872297-free-ghost-pixel-art-sprite-sheets/Gotoku/Hurt.png" id="6_oip58"]
+[ext_resource type="Texture2D" uid="uid://ds1y2h1tcoqnp" path="res://sprites/craftpix-net-872297-free-ghost-pixel-art-sprite-sheets/Gotoku/Idle.png" id="7_e8klg"]
+[ext_resource type="Script" uid="uid://bc6smhmsko767" path="res://Cenas/Batalha_Turno/teste_git.gd" id="8_caxtp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi46h"]
+atlas = ExtResource("4_l62d0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3mhk"]
+atlas = ExtResource("4_l62d0")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvrkh"]
+atlas = ExtResource("4_l62d0")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eri5"]
+atlas = ExtResource("4_l62d0")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m61px"]
+atlas = ExtResource("5_caxtp")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv7w7"]
+atlas = ExtResource("5_caxtp")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bux1e"]
+atlas = ExtResource("5_caxtp")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crp3a"]
+atlas = ExtResource("5_caxtp")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6thv4"]
+atlas = ExtResource("5_caxtp")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxlee"]
+atlas = ExtResource("5_caxtp")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s86p"]
+atlas = ExtResource("5_caxtp")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yltqc"]
+atlas = ExtResource("5_caxtp")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31jgd"]
+atlas = ExtResource("6_oip58")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s56em"]
+atlas = ExtResource("6_oip58")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tbda"]
+atlas = ExtResource("6_oip58")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07n7j"]
+atlas = ExtResource("7_e8klg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1mb0"]
+atlas = ExtResource("7_e8klg")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7tdb"]
+atlas = ExtResource("7_e8klg")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kudy"]
+atlas = ExtResource("7_e8klg")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8extq"]
+atlas = ExtResource("7_e8klg")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ttd1a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi46h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3mhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvrkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0eri5")
+}],
+"loop": 1,
+"name": &"ataque",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m61px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv7w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bux1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crp3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6thv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxlee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s86p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yltqc")
+}],
+"loop": 1,
+"name": &"esquiva",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31jgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s56em")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tbda")
+}],
+"loop": 1,
+"name": &"hurt",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07n7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1mb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7tdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kudy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8extq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Entidade" type="Control" unique_id=1965048823]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pg7x4")
+
+[node name="AttackNode" type="Node" parent="." unique_id=815880233]
+script = ExtResource("2_5g066")
+
+[node name="HealthNode" type="Node" parent="." unique_id=1644669582]
+script = ExtResource("3_63xte")
+
+[node name="SpritePercyBattle" type="AnimatedSprite2D" parent="." unique_id=1350354905]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ttd1a")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6647796
+
+[node name="Teste-Git" type="Node" parent="." unique_id=654831031]
+script = ExtResource("8_caxtp")

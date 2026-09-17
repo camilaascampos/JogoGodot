@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dw33v3v5dfa8n"]
+
+[ext_resource type="Script" uid="uid://bgsr1kwuweo3s" path="res://Cenas/Batalha_Turno/batalha.gd" id="1_yxk21"]
+[ext_resource type="PackedScene" uid="uid://d3e7vq176xoip" path="res://Cenas/Batalha_Turno/entidade.tscn" id="2_wsx7n"]
+
+[node name="Batalha" type="Control" unique_id=716001236]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yxk21")
+
+[node name="Entidade" parent="." unique_id=1965048823 instance=ExtResource("2_wsx7n")]
+layout_mode = 0

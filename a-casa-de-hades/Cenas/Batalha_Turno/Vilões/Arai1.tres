@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://cbpi622v6aedc"]
+
+[ext_resource type="Script" uid="uid://bqim8npbnfh1l" path="res://RecursosEntidade.gd" id="1_2rnss"]
+
+[resource]
+script = ExtResource("1_2rnss")
+Mobname = "Arai1"
+Str = 30
+Dex = 3
+Int = 3
+MaxHP = 150.0

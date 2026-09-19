@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://babn2rj3fg7fr" path="res://sprites/craftpix-net-872297-free-ghost-pixel-art-sprite-sheets/Gotoku/Jump.png" id="5_caxtp"]
 [ext_resource type="Texture2D" uid="uid://cam2w0pjoh36b" path="res://sprites/craftpix-net-872297-free-ghost-pixel-art-sprite-sheets/Gotoku/Hurt.png" id="6_oip58"]
 [ext_resource type="Texture2D" uid="uid://ds1y2h1tcoqnp" path="res://sprites/craftpix-net-872297-free-ghost-pixel-art-sprite-sheets/Gotoku/Idle.png" id="7_e8klg"]
-[ext_resource type="Script" uid="uid://bc6smhmsko767" path="res://Cenas/Batalha_Turno/teste_git.gd" id="8_caxtp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hi46h"]
 atlas = ExtResource("4_l62d0")
@@ -191,6 +190,3 @@ sprite_frames = SubResource("SpriteFrames_ttd1a")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.6647796
-
-[node name="Teste-Git" type="Node" parent="." unique_id=654831031]
-script = ExtResource("8_caxtp")

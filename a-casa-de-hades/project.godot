@@ -11,17 +11,18 @@ config_version=5
 [application]
 
 config/name="A_Casa_de_Hades"
+run/main_scene="uid://caacnnbggkb4b"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[autoload]
-
-PercyStats="*uid://mxy4phf5qbhe"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/turnbasedcombat/plugin.cfg")
 
 [physics]
 

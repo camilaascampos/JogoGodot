@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="JRPGSpecies" format=3 uid="uid://dgxt37p57647i"]
+
+[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="1_vjjru"]
+[ext_resource type="Resource" uid="uid://cnuck7eyarjxh" path="res://addons/turnbasedcombat/Template/TempSkills/Punch.tres" id="2_gooae"]
+[ext_resource type="Script" uid="uid://djm7gt0pdnt6m" path="res://addons/turnbasedcombat/Scripts/Character/Species.gd" id="3_vgfk4"]
+
+[resource]
+script = ExtResource("3_vgfk4")
+Name = "Percy"
+Max_Base_HP = 250
+Max_Base_Magi = 100
+HP_Growth = 30
+Magi_Growth = 15
+Magi_Regen = 15
+Strength = 4
+Base_Skills = Array[ExtResource("1_vjjru")]([ExtResource("2_gooae")])
+metadata/_custom_type_script = "uid://djm7gt0pdnt6m"

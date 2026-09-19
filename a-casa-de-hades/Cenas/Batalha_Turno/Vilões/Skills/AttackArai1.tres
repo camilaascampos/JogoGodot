@@ -1,8 +1,0 @@
-[gd_resource type="Resource" format=3 uid="uid://dimp8f37f803e"]
-
-[ext_resource type="Script" uid="uid://gam8bjrw2ef" path="res://SkillResource.gd" id="1_eyb44"]
-
-[resource]
-script = ExtResource("1_eyb44")
-SkillName = "Attack Arrai 1 "
-SkillPower = 15.0

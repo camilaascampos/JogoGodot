@@ -1,0 +1,14 @@
+[remap]
+
+importer="gdrama_importer"
+type="Resource"
+uid="uid://dnsctq5hgoye3"
+path="res://.godot/imported/cena1.gdrama-55631278fa347ee79fad6b682eafc526.tres"
+
+[deps]
+
+source_file="res://Cenas/CenaInicio/cena1.gdrama"
+dest_files=["res://.godot/imported/cena1.gdrama-55631278fa347ee79fad6b682eafc526.tres"]
+
+[params]
+

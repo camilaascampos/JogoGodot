@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cj6mclkcwl2js"]
+
+[ext_resource type="Script" uid="uid://cbpncw6gdqh34" path="res://animation_player.gd" id="1_kdktp"]
+[ext_resource type="Script" uid="uid://touw431p26g" path="res://addons/gdrama/scripts/components/DramaDisplay2D.gd" id="2_htfic"]
+
+[node name="CenaInicio" type="Node2D" unique_id=1763459708]
+
+[node name="cutSceneCam" type="Camera2D" parent="." unique_id=1382207952]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cutSceneCam" unique_id=1995499094]
+root_node = NodePath("../..")
+script = ExtResource("1_kdktp")
+
+[node name="Control" type="Control" parent="cutSceneCam/AnimationPlayer" unique_id=680784941]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="cutSceneCam/AnimationPlayer/Control" unique_id=1549800217]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="DramaDisplay2D" type="Node2D" parent="." unique_id=272357743]
+script = ExtResource("2_htfic")
+metadata/_custom_type_script = "uid://touw431p26g"

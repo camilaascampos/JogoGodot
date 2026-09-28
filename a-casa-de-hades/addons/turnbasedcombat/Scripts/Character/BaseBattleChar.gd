@@ -14,6 +14,7 @@ var Strength: float = 1;
 var AvailableAction := false
 
 func _ready() -> void:
+	print("BASEBATTLECHAR CARREGADO")
 	Animator = $Animationplayer
 	AIControl = $AIControl
 	
@@ -40,13 +41,37 @@ func AITurn(Context: JRPGContext):
 
 func ApplySkill(Amount: int, DamageType: JRPGEnums.DamageType, Element: JRPGEnums.Elements, Caster: JRPGBaseBattleChar):
 	if DamageType == JRPGEnums.DamageType.Damage:
-		Char.current_hp -= Amount * Defense;
+		var damage = Amount * Defense
+		Char.current_hp -= damage
+		
+		var damage_label = Label.new()
+		damage_label.text = "-" + str(int(damage))
+		damage_label.add_theme_font_size_override("font_size", 16)
+
+		get_tree().current_scene.add_child(damage_label)
+
+		damage_label.global_position = global_position + Vector2(-10, -60)
+		
+		var tween = create_tween()
+		
+		tween.set_parallel(true)
+		tween.tween_property(
+			damage_label,
+			"position",
+			damage_label.position + Vector2(0, -60),
+			0.7
+		)
+		tween.tween_property(
+			damage_label,
+			"modulate:a",
+			0.0,
+			0.7
+		)
+		
+		tween.set_parallel(false)
+		tween.tween_callback(damage_label.queue_free)
+		
 		JRPGSignalBus.instance.ResultToUI.emit(Caster.Char.species.Name + " attacked " + Char.species.Name + " for " + str(Amount) + " damage")
-		
-	elif DamageType == JRPGEnums.DamageType.Health:
-		Char.current_hp = clampi(Char.current_hp + Amount, Char.current_hp, Char.max_hp)
-		JRPGSignalBus.instance.ResultToUI.emit(Caster.Char.species.Name + " Healed " + Char.species.Name + " for " + str(Amount) + " health")
-		
 func ApplyEffect(Char: JRPGBaseBattleChar, Team: JRPGEnums.Team, StartofTurn: bool):
 	var remove: Array[JRPGBaseEffect] = []
 	
@@ -62,7 +87,10 @@ func ApplyEffect(Char: JRPGBaseBattleChar, Team: JRPGEnums.Team, StartofTurn: bo
 		StatusEffects.erase(item)
 
 func TakeDamage(Amount: int, Effect: JRPGBaseEffect = null):
-	Char.current_hp -= Amount;
+	print("DANO RECEBIDO: ", Amount)
+	
+	Char.current_hp -= Amount
+	
 	if Effect:
 		JRPGSignalBus.instance.ResultToUI.emit(Effect.Name + " Damaged " + Char.species.Name + " for " + str(Amount) + " health")
 

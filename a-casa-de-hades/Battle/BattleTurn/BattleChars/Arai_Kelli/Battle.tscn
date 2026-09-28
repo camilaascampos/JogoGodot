@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cd5uaolhtdnex"]
+[gd_scene format=3 uid="uid://b07s4nlk4j8t1"]
 
 [ext_resource type="Shader" uid="uid://dxbhn3mahwbve" path="res://addons/turnbasedcombat/assets/shaders/Outline.gdshader" id="1_5qqrw"]
 [ext_resource type="Texture2D" uid="uid://iktjapb60i0g" path="res://addons/turnbasedcombat/assets/Human Male Model/Human Male Model-Sheet.png" id="2_t2m01"]

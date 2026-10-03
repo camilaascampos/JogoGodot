@@ -11,6 +11,8 @@
 [sub_resource type="Resource" id="Resource_x614j"]
 metadata/__load_path__ = "res://addons/turnbasedcombat/assets/ALLTogether.png"
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_86ap7"]
+
 [node name="Template" type="Node2D" unique_id=1027878905]
 script = ExtResource("1_fpi7x")
 Annabeth = ExtResource("2_0s6aa")
@@ -27,5 +29,8 @@ Background = SubResource("Resource_x614j")
 [node name="TextureRect" parent="Combat/Background" parent_id_path=PackedInt32Array(320433929, 861365545) index="0" unique_id=1827207403]
 offset_right = 1152.0
 stretch_mode = 2
+
+[node name="Button1" parent="Combat/UI/Main UI/HBoxContainer/Buttonbox/Buttons/VBoxContainer" parent_id_path=PackedInt32Array(320433929, 962242970) index="0" unique_id=2090085556]
+icon = SubResource("ViewportTexture_86ap7")
 
 [editable path="Combat"]

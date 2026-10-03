@@ -1,16 +1,27 @@
 [gd_resource type="Resource" script_class="JRPGBaseSkill" format=3 uid="uid://cnuck7eyarjxh"]
 
 [ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="1_8j7tr"]
-[ext_resource type="Resource" uid="uid://cdmbijro04pnx" path="res://addons/turnbasedcombat/Template/TempEffects/stunned.tres" id="1_qbg1n"]
+[ext_resource type="PackedScene" uid="uid://crepeiyubpibb" path="res://addons/turnbasedcombat/Template/TempEffects/StunVis.tscn" id="1_tx15r"]
+[ext_resource type="Script" uid="uid://bta2wfqui20m5" path="res://addons/turnbasedcombat/Scripts/Character/BaseEffect.gd" id="2_m55gy"]
+
+[sub_resource type="Resource" id="Resource_p1bhq"]
+script = ExtResource("2_m55gy")
+Name = "stunned"
+EffectVis = ExtResource("1_tx15r")
+DurationType = 1
+EffectType = 0
+statTarget = 2
+CalculationType = 1
+Amount = 10
+metadata/_custom_type_script = "uid://bta2wfqui20m5"
 
 [resource]
 script = ExtResource("1_8j7tr")
-Name = "Punch"
-Description = "Puches enemy for 5 damage"
+Name = "punch"
+Description = "soco"
 AnimationName = "punch"
 HitChance = 80
 Element = 4
-BaseDamage = 100
-HitCount = 100
-Effect = ExtResource("1_qbg1n")
+BaseDamage = 40
+Effect = SubResource("Resource_p1bhq")
 metadata/_custom_type_script = "uid://b5pok347oiq0u"

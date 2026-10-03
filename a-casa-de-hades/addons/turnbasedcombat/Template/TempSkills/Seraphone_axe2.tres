@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="JRPGBaseSkill" format=3 uid="uid://c4oq3fuhqiiwe"]
+
+[ext_resource type="Resource" uid="uid://cdmbijro04pnx" path="res://addons/turnbasedcombat/Template/TempEffects/stunned.tres" id="1_s2nlc"]
+[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="2_7sntj"]
+
+[resource]
+script = ExtResource("2_7sntj")
+Name = "Seraphone_axel"
+Description = "Jogar o Machado"
+AnimationName = "punch"
+HitChance = 40
+Element = 4
+BaseDamage = 90
+Effect = ExtResource("1_s2nlc")
+metadata/_custom_type_script = "uid://b5pok347oiq0u"

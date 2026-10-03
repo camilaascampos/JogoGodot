@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JRPGBaseSkill" format=3 uid="uid://bkpjf5wc54uel"]
+
+[ext_resource type="Resource" uid="uid://cdmbijro04pnx" path="res://addons/turnbasedcombat/Template/TempEffects/stunned.tres" id="1_fa7b5"]
+[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="2_x0050"]
+
+[resource]
+script = ExtResource("2_x0050")
+Name = "Punch"
+Description = "Puches enemy for 5 damage"
+AnimationName = "punch"
+HitChance = 50
+Element = 4
+BaseDamage = 100
+HitCount = 100
+Effect = ExtResource("1_fa7b5")
+metadata/_custom_type_script = "uid://b5pok347oiq0u"

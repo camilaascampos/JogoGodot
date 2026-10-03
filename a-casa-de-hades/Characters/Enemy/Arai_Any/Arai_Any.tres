@@ -7,9 +7,9 @@
 [resource]
 script = ExtResource("3_eeryd")
 Name = "Arai_Any"
-Max_Base_HP = 300
-Max_Base_Magi = 100
-HP_Growth = 10
+Max_Base_HP = 800
+Max_Base_Magi = 400
+HP_Growth = 80
 Magi_Regen = 10
 Weakness = 4
 Strength = 5

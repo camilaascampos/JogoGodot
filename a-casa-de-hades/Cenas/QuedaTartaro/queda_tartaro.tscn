@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dduxbw10yag1q"]
+
+[ext_resource type="Script" uid="uid://ovujvqhpa0e0" path="res://Cenas/QuedaTartaro/scripts/core/FallDirector.gd" id="1_dir"]
+
+[node name="QuedaTartaro" type="Node2D" unique_id=1247522095]
+script = ExtResource("1_dir")

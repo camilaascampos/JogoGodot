@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="A_Casa_de_Hades"
-run/main_scene="uid://caacnnbggkb4b"
+run/main_scene="uid://dduxbw10yag1q"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

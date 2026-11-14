@@ -17,6 +17,14 @@ class_name JRPGBaseEffect
 ## Dictates if the effect gets triggerd at the start or end of a characters turn
 @export var isStartOfTurn: bool = true
 
+@export_group("Status")
+## Atordoamento: o personagem perde a ação enquanto o efeito durar.
+@export var PreventsAction : bool = false
+## Imobilização: o personagem não consegue esquivar.
+@export var PreventsDodge : bool = false
+## Invisibilidade (Boné dos Yankees): a IA não escolhe o personagem como alvo.
+@export var MakesInvisible : bool = false
+
 @export_group("Mechanics")
 ## Does this modify a stat for the duration, or tick damage/healing every turn?
 @export var EffectType : JRPGEnums.EffectType = JRPGEnums.EffectType.Tickperturn
@@ -34,7 +42,7 @@ func Attach(Caster: JRPGBaseBattleChar, Target: JRPGBaseBattleChar):
 	randomize()
 
 	if HitChance < 100:
-		if !randi_range(0, 99) < HitChance:
+		if randi_range(0, 99) >= HitChance:
 			return
 	
 	if Target.StatusEffects.has(self):
@@ -48,14 +56,14 @@ func Attach(Caster: JRPGBaseBattleChar, Target: JRPGBaseBattleChar):
 
 func Apply(Target: JRPGBaseBattleChar):
 	print("Apply effect to " + Target.Char.species.Name)
-	JRPGSignalBus.instance.ResultToUI.emit(Target.Char.species.Name + " is affected by " + Name)
+	JRPGSignalBus.instance.ResultToUI.emit(Target.Char.species.get_display_name() + " is affected by " + Name)
 	
 	if EffectVis != null:
 		var effectvisinstance = EffectVis.instantiate()
 		Target.add_child(effectvisinstance)
 		effectvisinstance.Visualize()
 		
-	if EffectType == JRPGEnums.EffectType.Modify:
+	if EffectType != JRPGEnums.EffectType.Tickperturn:
 		return
 	
 	match statTarget:

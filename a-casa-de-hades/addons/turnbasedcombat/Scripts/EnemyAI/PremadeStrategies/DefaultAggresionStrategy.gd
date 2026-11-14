@@ -16,12 +16,18 @@ func evaluate_skill(Skill: JRPGBaseSkill, Self: JRPGBaseBattleChar, Context: JRP
 	
 	# --- SINGLE TARGET ENEMY ---
 	if Skill.Target == JRPGEnums.Target.Enemy:
-		var Target = Context.Enemies[0] 
+		var Target: JRPGBaseBattleChar = null
 		for Enemy in Context.Enemies:
-			if Enemy.Char.current_hp < Target.Char.current_hp:
+			if not Enemy.Char.IsAlive():
+				continue
+			if Target == null or Enemy.Char.current_hp < Target.Char.current_hp:
 				Target = Enemy
+		if Target == null:
+			return JRPGStrategyResult.new(Skill, null, 0)
 			
-		var Score = float(Skill.BaseDamage) * 1.5 
+		var Score = float(Skill.BaseDamage) * 1.5
+		if Skill.Effect != null:
+			Score += 10.0 # prefere habilidades que aplicam status
 		Score = maxf(0.0, Score - CostCalucation(Skill,Self))
 		
 		return JRPGStrategyResult.new(Skill, Target, Score)

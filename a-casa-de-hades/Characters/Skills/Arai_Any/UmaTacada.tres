@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="JRPGBaseSkill" format=3]
+
+[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="1_sk"]
+
+[resource]
+script = ExtResource("1_sk")
+Name = "Uma Tacada"
+Description = "Golpe simples de taco."
+AnimationName = "punch"
+Cost = 0
+Element = 4
+BaseDamage = 35
+metadata/_custom_type_script = "uid://b5pok347oiq0u"

@@ -1,6 +1,9 @@
 extends Node2D
 class_name JRPGCombatManager
 
+## Emitido quando a batalha acaba e o jogador confirma a tela de vitória/derrota.
+signal battle_finished(player_won: bool)
+
 enum TurnManagerStyle {
 	## per turn the player can choose all of the characters to do something once
 	PerTeam,
@@ -15,12 +18,14 @@ enum TurnManagerStyle {
 }
 
 ## choice for which [b]TurnManager[/b] you want to use in combat
-@export var turnmanagerstyle: TurnManagerStyle = TurnManagerStyle.PerTeam
+@export var turnmanagerstyle: TurnManagerStyle = TurnManagerStyle.OrderStat
 @export var PlayerTeamNode: Node2D
 @export var EnemyTeamNode: Node2D
 ## Filepath where all you character for the turn based combat are. they need to be structured like: res://[yourfolders]/[example]Battlechars/[speciesname]/Battle.tscn the structure is important otherwise this won't be able to find the characters. To see an example look at the template scene
 @export var CharactersPath: String
-@export_enum("History", "Team resources") var LeftPanel = "History"
+
+## Itens do menu ITEM (ex.: Pote de cura). Só aparecem se o jogador possuir o item (JRPGInventory).
+@export var ItemSkills: Array[JRPGBaseSkill]
 
 @export_group("UI")
 @export var Background: Texture2D
@@ -39,6 +44,9 @@ var PlayerTeam: Array[JRPGCharInstance]
 ## array of character for the enemy team [color=green][b]3 max[/b][/color]
 var EnemyTeam: Array[JRPGCharInstance]
 var TurnManagerinstance: JRPGTurnManager
+var _player_won := false
+## Inventário no começo da luta: "tentar novamente" devolve os itens gastos.
+var _inventory_snapshot: Dictionary = {}
 
 
 func start():
@@ -54,22 +62,25 @@ func start():
 		TurnManagerStyle.OrderAternating:
 			push_error("Not implemented yet!")
 		TurnManagerStyle.OrderStat:
-			push_error("Not implemented yet!")
+			var preinstance = load("res://addons/turnbasedcombat/Scripts/TurnManagers/TurnManagerOrderStat.gd")
+			TurnManagerinstance = preinstance.new()
+			add_child(TurnManagerinstance)
+			SetupPerTeam()
 		TurnManagerStyle.LooseOrderStat:
 			push_error("Not implemented yet!")
 	
-	match LeftPanel:
-		"History":
-			var history = load("res://addons/turnbasedcombat/Nodes/textbox.tscn").instantiate()
-			$"UI/Main UI/HBoxContainer".add_child(history)
-			$UI.HistoryBox = history.get_child(0)
-			$"UI/Main UI/HBoxContainer".move_child(history, 0)
-		"Team resources":
-			var teamresources = load("res://addons/turnbasedcombat/Nodes/TeamHP.tscn").instantiate()
-			$"UI/Main UI/HBoxContainer".add_child(teamresources)
-			teamresources.Setup(PlayerTeam)
-			$"UI/Main UI/HBoxContainer".move_child(teamresources, 0)
-			
+	# HUD: precisa dos personagens já criados (LoadChars roda dentro do SetupPerTeam).
+	JRPGSignalBus.instance.BattleEnded.connect(func(won: bool): _player_won = won)
+	_inventory_snapshot = JRPGInventory.items.duplicate()
+	JRPGSignalBus.instance.RetryBattle.connect(func():
+		JRPGInventory.items = _inventory_snapshot.duplicate()
+		get_tree().reload_current_scene())
+	JRPGSignalBus.instance.EndBattle.connect(func(): battle_finished.emit(_player_won))
+
+	if TurnManagerinstance != null:
+		$UI.item_skills = ItemSkills
+		$UI.setup_hud(TurnManagerinstance.PlayerTeam, TurnManagerinstance.EnemyTeam)
+
 	if EnableCustomTheme:
 		var controlnodes = find_children("*", "Control")
 		

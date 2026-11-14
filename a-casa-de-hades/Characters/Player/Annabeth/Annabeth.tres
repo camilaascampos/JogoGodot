@@ -1,15 +1,21 @@
 [gd_resource type="Resource" script_class="JRPGSpecies" format=3 uid="uid://34qci52qhc0w"]
 
-[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="1_wspgm"]
-[ext_resource type="Resource" uid="uid://cnuck7eyarjxh" path="res://addons/turnbasedcombat/Template/TempSkills/Punch.tres" id="2_heboc"]
-[ext_resource type="Script" uid="uid://djm7gt0pdnt6m" path="res://addons/turnbasedcombat/Scripts/Character/Species.gd" id="3_de1kt"]
+[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="1_sk"]
+[ext_resource type="Script" uid="uid://djm7gt0pdnt6m" path="res://addons/turnbasedcombat/Scripts/Character/Species.gd" id="2_sp"]
+[ext_resource type="Resource" path="res://Characters/Skills/Annabeth/Adaga.tres" id="r0"]
+[ext_resource type="Resource" path="res://Characters/Skills/Annabeth/BoneYankees.tres" id="r1"]
+[ext_resource type="Resource" path="res://Characters/Skills/Annabeth/BencaoDeAtena.tres" id="r2"]
 
 [resource]
-script = ExtResource("3_de1kt")
+script = ExtResource("2_sp")
 Name = "Annabeth"
-Max_Base_HP = 200
+Speed = 30
+Max_Base_HP = 500
+Max_Base_Magi = 60
 HP_Growth = 30
+Magi_Regen = 10
 Weakness = 4
 Strength = 5
-Base_Skills = Array[ExtResource("1_wspgm")]([ExtResource("2_heboc")])
+BasicAttack = ExtResource("r0")
+Base_Skills = Array[ExtResource("1_sk")]([ExtResource("r1"), ExtResource("r2")])
 metadata/_custom_type_script = "uid://djm7gt0pdnt6m"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="JRPGBaseSkill" format=3]
+
+[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="1_sk"]
+[ext_resource type="Resource" path="res://Characters/Effects/Queimadura.tres" id="2_fx"]
+
+[resource]
+script = ExtResource("1_sk")
+Name = "Tacada de Bola"
+Description = "Bola em chamas. Causa queimadura."
+AnimationName = "punch"
+Cost = 100
+Element = 0
+BaseDamage = 70
+Effect = ExtResource("2_fx")
+metadata/_custom_type_script = "uid://b5pok347oiq0u"

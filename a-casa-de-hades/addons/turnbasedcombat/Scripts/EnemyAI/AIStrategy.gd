@@ -7,6 +7,11 @@ func evaluate_skill(Skill: JRPGBaseSkill, Self: JRPGBaseBattleChar, Context: JRP
 
 func CostCalucation(Skill: JRPGBaseSkill, Self: JRPGBaseBattleChar) -> float:
 	var CostPenalty: float = 0.0
+
+	if Self.Char.cooldown_left(Skill) > 0:
+		return -1
+	if Skill.RequiresUltimate and Self.Char.ultimate_charge < Self.Char.ultimate_max:
+		return -1
 	
 	match Skill.CostType:
 		JRPGEnums.CostType.Magi:

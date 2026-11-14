@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cj6mclkcwl2js"]
 
-[ext_resource type="Script" uid="uid://cbpncw6gdqh34" path="res://animation_player.gd" id="1_kdktp"]
+[ext_resource type="Script" uid="uid://cbpncw6gdqh34" path="res://Cenas/CenaInicio/scripts/animation_player.gd" id="1_kdktp"]
 [ext_resource type="Script" uid="uid://touw431p26g" path="res://addons/gdrama/scripts/components/DramaDisplay2D.gd" id="2_htfic"]
 
 [node name="CenaInicio" type="Node2D" unique_id=1763459708]

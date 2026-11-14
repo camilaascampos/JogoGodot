@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="JRPGBaseEffect" format=3]
+
+[ext_resource type="Script" uid="uid://bta2wfqui20m5" path="res://addons/turnbasedcombat/Scripts/Character/BaseEffect.gd" id="1_fx"]
+[ext_resource type="PackedScene" uid="uid://crepeiyubpibb" path="res://addons/turnbasedcombat/Template/TempEffects/StunVis.tscn" id="2_vis"]
+
+[resource]
+script = ExtResource("1_fx")
+Name = "Atordoamento"
+EffectVis = ExtResource("2_vis")
+DurationType = 1
+isStartOfTurn = false
+Duration = 1
+EffectType = 2
+PreventsAction = true
+metadata/_custom_type_script = "uid://bta2wfqui20m5"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="JRPGBaseEffect" format=3]
+
+[ext_resource type="Script" uid="uid://bta2wfqui20m5" path="res://addons/turnbasedcombat/Scripts/Character/BaseEffect.gd" id="1_fx"]
+
+[resource]
+script = ExtResource("1_fx")
+Name = "Invisível"
+Duration = 3
+DurationType = 1
+isStartOfTurn = true
+EffectType = 2
+MakesInvisible = true
+metadata/_custom_type_script = "uid://bta2wfqui20m5"

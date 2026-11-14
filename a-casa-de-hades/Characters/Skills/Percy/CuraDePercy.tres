@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="JRPGBaseSkill" format=3]
+
+[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="1_sk"]
+
+[resource]
+script = ExtResource("1_sk")
+Name = "Cura de Percy"
+Description = "Recupera 15% do HP máximo. Tem recarga."
+AnimationName = "punch"
+Target = 2
+Cost = 40
+DamageType = 3
+Element = 5
+BaseDamage = 0
+Cooldown = 3
+HealPercent = 15
+metadata/_custom_type_script = "uid://b5pok347oiq0u"

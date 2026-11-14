@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="JRPGBaseSkill" format=3]
+
+[ext_resource type="Script" uid="uid://b5pok347oiq0u" path="res://addons/turnbasedcombat/Scripts/Character/BaseSkill.gd" id="1_sk"]
+[ext_resource type="Resource" path="res://Characters/Effects/Atordoamento.tres" id="2_fx"]
+
+[resource]
+script = ExtResource("1_sk")
+Name = "Home Run"
+Description = "Tacada forte. Atordoa o alvo."
+AnimationName = "punch"
+Cost = 50
+Element = 4
+BaseDamage = 45
+Effect = ExtResource("2_fx")
+metadata/_custom_type_script = "uid://b5pok347oiq0u"

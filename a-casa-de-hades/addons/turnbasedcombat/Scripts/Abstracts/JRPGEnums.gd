@@ -60,7 +60,9 @@ enum  Team{
 
 enum EffectType{
 	Modify,
-	Tickperturn
+	Tickperturn,
+	## Status sem número: só marca flags (atordoamento, imobilização...)
+	Status
 }
 
 enum CalcType{

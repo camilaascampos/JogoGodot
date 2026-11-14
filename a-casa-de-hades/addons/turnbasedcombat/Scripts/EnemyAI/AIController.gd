@@ -28,6 +28,11 @@ func ChooseAction(ai_character: JRPGBaseBattleChar, combat_context: JRPGContext)
 				best_skill = skill
 				best_target = [evaluation.Target]
 				
+	if best_skill == null:
+		await get_tree().process_frame
+		JRPGSignalBus.instance.DidAction.emit()
+		return
+
 	if best_skill.Target == JRPGEnums.Target.All_Enemies:
 		best_target = combat_context.Enemies
 	elif best_skill.Target == JRPGEnums.Target.All_Allies:

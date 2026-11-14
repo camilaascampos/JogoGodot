@@ -1,0 +1,78 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Cenas/EntreBosses/scripts/entre_bosses.gd" id="1_main"]
+[ext_resource type="Script" path="res://Cenas/EntreBosses/scripts/PlatformBlock.gd" id="2_plat"]
+[ext_resource type="Script" path="res://Cenas/EntreBosses/scripts/Pickup.gd" id="3_pick"]
+[ext_resource type="Script" path="res://Cenas/EntreBosses/scripts/BossGate.gd" id="4_gate"]
+[ext_resource type="Texture2D" path="res://Cenas/EntreBosses/arte/fundo_tartaro.png" id="5_bg"]
+
+[node name="EntreBosses" type="Node2D"]
+script = ExtResource("1_main")
+Background = ExtResource("5_bg")
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Start" type="Marker2D" parent="Level"]
+position = Vector2(220, 448)
+
+[node name="Ground" type="StaticBody2D" parent="Level"]
+position = Vector2(-300, 448)
+script = ExtResource("2_plat")
+size = Vector2(5200, 300)
+one_way = false
+draw_visual = false
+
+[node name="Plataforma1" type="StaticBody2D" parent="Level"]
+position = Vector2(1250, 330)
+script = ExtResource("2_plat")
+size = Vector2(220, 18)
+
+[node name="Plataforma2" type="StaticBody2D" parent="Level"]
+position = Vector2(2350, 330)
+script = ExtResource("2_plat")
+size = Vector2(200, 18)
+
+[node name="Plataforma3" type="StaticBody2D" parent="Level"]
+position = Vector2(2650, 245)
+script = ExtResource("2_plat")
+size = Vector2(200, 18)
+
+[node name="PoteDeCura1" type="Area2D" parent="Level"]
+position = Vector2(900, 408)
+script = ExtResource("3_pick")
+item_id = "healing_pot"
+amount = 1
+
+[node name="BencaoDeAtena1" type="Area2D" parent="Level"]
+position = Vector2(1360, 290)
+script = ExtResource("3_pick")
+item_id = "athena_blessing"
+amount = 1
+
+[node name="PoteDeCura2" type="Area2D" parent="Level"]
+position = Vector2(1900, 408)
+script = ExtResource("3_pick")
+item_id = "healing_pot"
+amount = 1
+
+[node name="BoneYankees" type="Area2D" parent="Level"]
+position = Vector2(2750, 205)
+script = ExtResource("3_pick")
+item_id = "yankees_cap"
+amount = 1
+
+[node name="PoteDeCura3" type="Area2D" parent="Level"]
+position = Vector2(3200, 408)
+script = ExtResource("3_pick")
+item_id = "healing_pot"
+amount = 1
+
+[node name="BencaoDeAtena2" type="Area2D" parent="Level"]
+position = Vector2(3550, 408)
+script = ExtResource("3_pick")
+item_id = "athena_blessing"
+amount = 1
+
+[node name="BossGate" type="Area2D" parent="Level"]
+position = Vector2(4000, 148)
+script = ExtResource("4_gate")
